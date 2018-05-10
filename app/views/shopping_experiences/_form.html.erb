@@ -1,0 +1,32 @@
+<%= form_with(model: shopping_experience, local: true) do |form| %>
+  <% if shopping_experience.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shopping_experience.errors.count, "error") %> prohibited this shopping_experience from being saved:</h2>
+
+      <ul>
+      <% shopping_experience.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cart_id %>
+    <%= form.number_field :cart_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.number_field :total %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

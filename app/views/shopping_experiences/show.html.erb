@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @shopping_experience.date %>
+</p>
+
+<p>
+  <strong>Cart:</strong>
+  <%= @shopping_experience.cart_id %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @shopping_experience.total %>
+</p>
+
+<%= link_to 'Edit', edit_shopping_experience_path(@shopping_experience) %> |
+<%= link_to 'Back', shopping_experiences_path %>
