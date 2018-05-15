@@ -3,4 +3,6 @@ class Cart < ApplicationRecord
 	belongs_to :user
 	has_many :items
 	#validations
+	
+	validates_associated :items
 end

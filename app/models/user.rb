@@ -7,4 +7,7 @@ class User < ApplicationRecord
  
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+   validates :name, :username, presence: true
+   validates_associated :shopping_experiences
 end
