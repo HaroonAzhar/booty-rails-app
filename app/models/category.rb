@@ -5,6 +5,5 @@ class Category < ApplicationRecord
 	has_many :suppliers, through: :items #supplier refers to the brand or company providing items
 
 	#validations
-	validates :name, presence: true 
-	
+	validates :title, presence: true 
 end
