@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_15_204446) do
+ActiveRecord::Schema.define(version: 2018_05_19_204023) do
 
   create_table "carts", force: :cascade do |t|
     t.integer "total"
@@ -28,29 +28,33 @@ ActiveRecord::Schema.define(version: 2018_05_15_204446) do
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "company"
+    t.string "supplier"
     t.date "year"
+    t.integer "quantity"
+    t.integer "supplier_id"
+    t.integer "category_id"
     t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "shopping_experience_id"
-    t.integer "category_id"
-    t.integer "quantity"
-    t.integer "supplier_id"
-    t.integer "cart_id"
     t.string "display_file_name"
     t.string "display_content_type"
     t.integer "display_file_size"
     t.datetime "display_updated_at"
   end
 
+  create_table "items_shopping_experiences", id: false, force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "shopping_experience_id"
+    t.index ["item_id"], name: "index_items_shopping_experiences_on_item_id"
+    t.index ["shopping_experience_id"], name: "index_items_shopping_experiences_on_shopping_experience_id"
+  end
+
   create_table "shopping_experiences", force: :cascade do |t|
     t.date "date"
-    t.integer "cart_id"
     t.integer "total"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
   end
 
   create_table "suppliers", force: :cascade do |t|

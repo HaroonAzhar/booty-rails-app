@@ -4,4 +4,7 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# 	apple_inc=Supplier.create(name: "apple corp")
+# 	sony=Supplier.create(name: "sony")
+#   ps4= Item.create(name: "ps4",description:"dfdfs",company:sony,year:2015,price:50000)
 #   Character.create(name: 'Luke', movie: movies.first)

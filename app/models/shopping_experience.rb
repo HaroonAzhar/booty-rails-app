@@ -5,7 +5,8 @@ class ShoppingExperience < ApplicationRecord
 
 	    #validations
 	    validates_associated :items
-	    validates :date, presence: true
+	    validates_associated :user
+	    
 	    
 	
 end

@@ -9,5 +9,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
    validates :name, :username, presence: true
-   validates_associated :shopping_experiences
+   
 end
