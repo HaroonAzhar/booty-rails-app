@@ -24,6 +24,7 @@ class SuppliersController < ApplicationController
   # POST /suppliers
   # POST /suppliers.json
   def create
+     binding.pry
     @supplier = Supplier.new(supplier_params)
 
     respond_to do |format|
@@ -69,6 +70,7 @@ class SuppliersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def supplier_params
-      params.fetch(:supplier, {})
+      binding.pry
+      params.require(:supplier).permit(:name)
     end
 end
