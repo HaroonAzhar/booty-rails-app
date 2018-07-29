@@ -7,6 +7,10 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
+  def home
+    
+  end
+
   # GET /items/1
   # GET /items/1.json
   def show
@@ -24,6 +28,7 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    binding.pry
     @item = Item.new(item_params)
 
     respond_to do |format|
@@ -69,6 +74,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :description, :company, :category,:year, :price)
+      params.require(:item).permit(:name, :description, :supplier_id, :category_id,:year, :quantity ,:price)
     end
 end
